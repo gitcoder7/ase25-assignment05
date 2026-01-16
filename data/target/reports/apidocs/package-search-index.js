@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"de.unibayreuth.se.taskboard.data.impl"},{"l":"de.unibayreuth.se.taskboard.data.mapper"},{"l":"de.unibayreuth.se.taskboard.data.persistence"}];updateSearchResults();

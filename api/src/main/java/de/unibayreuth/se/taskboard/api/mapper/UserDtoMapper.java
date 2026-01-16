@@ -11,16 +11,13 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 
 @Mapper(componentModel = "spring")
-@ConditionalOnMissingBean // prevent IntelliJ warning about duplicate beans
+@ConditionalOnMissingBean
 @NoArgsConstructor
 public abstract class UserDtoMapper {
     public abstract UserDto fromBusiness(User source);
 
-    //TODO: Fix this mapper after resolving the other TODOs.
     @Mapping(target = "id", ignore = true)
-    @Mapping(target = "name", ignore = true)
-    @Mapping(target = "createdAt", ignore = true)
-    //@Mapping(target = "createdAt", expression = "java(mapTimestamp(source.getCreatedAt()))")
+    @Mapping(target = "createdAt", expression = "java(mapTimestamp(source.createdAt()))")
     public abstract User toBusiness(UserDto source);
 
     protected LocalDateTime mapTimestamp (LocalDateTime timestamp) {
@@ -30,3 +27,4 @@ public abstract class UserDtoMapper {
         return timestamp;
     }
 }
+

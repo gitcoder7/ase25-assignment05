@@ -2,7 +2,7 @@
 <pmd-cpd xmlns="https://pmd-code.org/schema/cpd-report"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          pmdVersion="7.7.0"
-         timestamp="2026-01-16T22:51:55.6381993+01:00"
+         timestamp="2026-01-17T00:22:19.9277891+01:00"
          version="1.0.0"
          xsi:schemaLocation="https://pmd-code.org/schema/cpd-report https://pmd.github.io/schema/cpd-report_1_0_0.xsd">
    <file path="C:\Users\imnkg\ase25-assignment05\ase25-assignment05\business\src\main\java\de\unibayreuth\se\taskboard\business\domain\Task.java"
@@ -21,6 +21,8 @@
          totalNumberOfTokens="19"/>
    <file path="C:\Users\imnkg\ase25-assignment05\ase25-assignment05\business\src\main\java\de\unibayreuth\se\taskboard\business\impl\TaskServiceImpl.java"
          totalNumberOfTokens="360"/>
+   <file path="C:\Users\imnkg\ase25-assignment05\ase25-assignment05\business\src\main\java\de\unibayreuth\se\taskboard\business\impl\UserServiceImpl.java"
+         totalNumberOfTokens="133"/>
    <file path="C:\Users\imnkg\ase25-assignment05\ase25-assignment05\business\src\main\java\de\unibayreuth\se\taskboard\business\ports\TaskPersistenceService.java"
          totalNumberOfTokens="79"/>
    <file path="C:\Users\imnkg\ase25-assignment05\ase25-assignment05\business\src\main\java\de\unibayreuth\se\taskboard\business\ports\TaskService.java"
@@ -28,5 +30,5 @@
    <file path="C:\Users\imnkg\ase25-assignment05\ase25-assignment05\business\src\main\java\de\unibayreuth\se\taskboard\business\ports\UserPersistenceService.java"
          totalNumberOfTokens="41"/>
    <file path="C:\Users\imnkg\ase25-assignment05\ase25-assignment05\business\src\main\java\de\unibayreuth\se\taskboard\business\ports\UserService.java"
-         totalNumberOfTokens="5"/>
+         totalNumberOfTokens="44"/>
 </pmd-cpd>

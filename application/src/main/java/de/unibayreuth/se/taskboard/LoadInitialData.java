@@ -25,7 +25,7 @@ class LoadInitialData implements InitializingBean {
     // TODO: Fix this class after resolving the other TODOs.
     private final UserService userService;
 
-        @Override
+            @Override
     public void afterPropertiesSet() {
         log.info("Deleting existing data...");
         userService.clear();
@@ -43,5 +43,6 @@ class LoadInitialData implements InitializingBean {
         task2.setAssigneeId(users.getLast().getId());
         taskService.upsert(task2);
     }
+
 
 }

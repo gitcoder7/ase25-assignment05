@@ -14,12 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.UUID;
 
-@OpenAPIDefinition(
-        info = @Info(
-                title = "TaskBoard",
-                version = "0.0.1"
-        )
-)
+@OpenAPIDefinition(info = @Info(title = "TaskBoard", version = "0.0.1"))
 @Tag(name = "Users")
 @RestController
 @RequestMapping("/api/users")
@@ -39,14 +34,13 @@ public class UserController {
 
     @GetMapping("/{id}")
     public UserDto getUserById(@PathVariable UUID id) {
-        User user = userService.getById(id)
-                .orElseThrow(() -> new IllegalArgumentException("User not found: " + id));
+        User user = userService.getById(id);
         return userDtoMapper.fromBusiness(user);
     }
 
     @PostMapping
-    public UserDto createUser(@Valid @RequestBody UserDto userDto) {
-        User created = userService.create(userDtoMapper.toBusiness(userDto));
+    public UserDto createUser(@Valid @RequestBody UserDto dto) {
+        User created = userService.create(userDtoMapper.toBusiness(dto));
         return userDtoMapper.fromBusiness(created);
     }
 }

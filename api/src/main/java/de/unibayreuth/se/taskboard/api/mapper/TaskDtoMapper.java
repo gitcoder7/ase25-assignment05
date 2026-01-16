@@ -9,6 +9,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import de.unibayreuth.se.taskboard.business.exceptions.UserNotFoundException;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -41,14 +42,17 @@ public abstract class TaskDtoMapper {
     public abstract Task toBusiness(TaskDto source);
 
 
-        protected UserDto getUserById(UUID userId) {
+            protected UserDto getUserById(UUID userId) {
         if (userId == null) {
             return null;
         }
-        return userService.getById(userId)
-                .map(userDtoMapper::fromBusiness)
-                .orElse(null);
+        try {
+            return userDtoMapper.fromBusiness(userService.getById(userId));
+        } catch (UserNotFoundException ex) {
+            return null;
+        }
     }
+
 
 
     protected LocalDateTime mapTimestamp (LocalDateTime timestamp) {
